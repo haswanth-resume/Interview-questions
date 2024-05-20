@@ -1,0 +1,73 @@
+1. How will you implement Vulnerability check by scanning the image in CI/CD Pipeline?
+ 
+2. Have you worked on Istio/ServiceMesh for Load Balancing Traffic Routing rules?
+ 
+3. Have you configured Azure API Management and configured Policy and rules?
+ 
+4. How good are you with different subnets configuration, VNet Integration, Peering etc?
+ 
+5. Are you good in Powershell Scripting for maintaining Admin Tasks?
+ 
+6. They asked kubernetes different objects, replicaset, Troubleshooting issues, Blue/Green Deployment, Canay Deployments.
+ 
+7. Rest API Concepts.
+ 
+8. Any Monitoring tools for Alert, Metrics like Prometheus, AppInsights etc?
+ 
+9. Communication between Microservices using Async process like Azure Service Bus (Pub/Sub Messaging) and Function Apps.
+ 
+10. They asked about Iac Tools like (Terraform) exposure and expertise.
+ 
+ 
+These are the questions they asked in the interviews.
+ 
+1. They asked about my experience so far.
+ 
+2. Azure DevOps related tasks and the yaml formate familiarity for writing pipelines in Azure Devops.
+ 
+3. What all services in Azure Devops i am aware of?
+ 
+4. Familiarity with terraform or infrastructure as code.
+ 
+5. Networking related questions. Like how will you identify or debug service having issue in private network. Instead of private IP’s we are using a url so how will we debug and identify issue?
+ 
+6. In kubernets some questions related to creation of replica sets.
+ 
+7. Microservices related questions.
+ 
+8. Different methods in RESt like get post etc.
+ 
+9. If we have different microservcies how will we manage in kubernetes?
+ 
+10. Questions related to docker.
+ 
+11. Asked me to explain one cicd pipeline i created.
+ 
+12. Scenario based like we have a . Net application and what all will be considered for CICd creation.
+ 
+13. Scripting related languages and familiarityon it.
+ 
+14. Kubernetes debugging related and monitoring tool i have used and how to identify the issues.
+ 
+15. Familiarity with docker registry and the process of creating a docker image and upload to registry.
+ 
+16. They were planning to ask on network security and firewall related but I havent worked much on those side so I didnt answer those.
+ 
+17. Code review tools any used.
+ 
+18. Familiarity in writing test cases using Selenium, i mentioned about xunit and mock ups.
+
+Asked to me
+
+How many years of experience in DevOps?
+Explain the CI/CD pipeline you created.
+Did you implement the Terraform pipeline and how?
+Are there any known scripting languages?
+Testing frameworks used in pipelines.
+Which type of application have you created?
+Which tools were used in the pipeline?
+How do you manage secrets, certificates using Azure Key Vault?
+What branching strategies have you used?
+Did you work on the PowerShell language for any admin tasks?
+which monitor tool you have used for your application?
+how frequently deployment happens?
