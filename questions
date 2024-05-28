@@ -73,4 +73,10 @@ which monitor tool you have used for your application?
 how frequently deployment happens?
 Did you know about resource limit in Kubernetes?
 Did you created any Kubernetes Cluster?
+What is remote state manager?
+How do you implement rolling updates?
+DO you know about Zero Downtime Deployment?
+What is dependencies between resources?
+How to handle sensitive data and secrets in terraform?
+What are workspaces in terraform?
 
