@@ -1,13 +1,18 @@
-Did you implement the Terraform pipeline and how?
-What is remote state manager?
-How do you implement rolling updates?
-DO you know about Zero Downtime Deployment?
+Question: Did you implement the Terraform pipeline and how?
+
+Question: What is remote state manager?
+
+Question: How do you implement rolling updates?
+
+Question: Do you know about Zero Downtime Deployment?
+
 Question: What is dependencies between resources?
 Ans: Explicitly specifying a dependency is only necessary when a resource relies on some other resource’s behavior but doesn’t access any of that 
 resource’s data in its arguments
 For example, if you have an EC2 instance and an S3 bucket, you might want the EC2 instance to be created before the S3 bucket. 
 In this case, you can specify the dependency explicitly using depends_on:
 By doing this, Terraform ensures that the EC2 instance is created before the S3 bucket during the execution of terraform apply.
+
 Question: How to handle sensitive data and secrets in terraform?
 Ans: Mark Variables as Sensitive:
 Terraform allows you to mark input variables as “sensitive.” When you do this, Terraform redacts the secrets from the console output.
@@ -23,17 +28,19 @@ However, keep in mind that anyone with access to the host will also have access 
 Remote State Storage:
 By default, Terraform stores the state file locally (as unencrypted JSON), which can expose sensitive data if someone gains access to the project files.
 Consider using a remote backend (such as DigitalOcean Spaces) to store your state. Remote backends automatically encrypt data at rest, enhancing security.
+
 Question: What are workspaces in terraform?
 Ans: Terraform starts with a single workspace named “default”.
 The workspace feature of Terraform allows users to switch between multiple instances of a single configuration with a unique state file.
 For local states, Terraform stores the workspace states in a directory called terraform.tfstate.d.
-Workspace commands
+Workspace commands:
 The terraform workspace new command is used to create a new workspace and switched to a new workspace.
 The terraform workspace list command is used to list all existing workspaces.
 The terraform workspace select command is used to choose a different workspace to use for further operations.
 The terraform workspace delete command is used to delete an existing workspace.
 The terraform workspace show command is used to output the current workspace.
 Note: Terraform Cloud and Terraform CLI both have features called “workspaces,” but they’re slightly different.
+
 Question: When statefile is locked and write the unlock command?
 Ans: State locking happens automatically on all operations that could write state. You won’t see any message that it is happening. If state locking fails, 
 Terraform will not continue. You can disable state locking for most commands with the -lock flag but it is not recommended.
@@ -41,3 +48,39 @@ Terraform has a force-unlock command to manually unlock the state if unlocking f
 First, identify the lock ID associated with the state you want to unlock. You can find this lock ID in the .tfstate.lock file.
 Run the following command, replacing LOCK_ID with the actual lock ID:
 terraform force-unlock LOCK_ID
+
+Question: Benefits of Terraform?
+Ans: Speed, Consistency, Codified, Minimun Risk, Cost, Version Controlled, Many Cloud platform one solution, Reusability.
+
+Question: What are provisioners in  Terraform?
+Ans: Provisioners can be used to model specific actions on the local machine or on a remote machine in order to prepare servers or other 
+infrastructure objects for service.
+Provisioners are inside the resource block.
+Types of provisioners:
+local-exec Provisioner
+remote-exec Provisioner
+Creation-time Provisioners
+Destroy-time Provisioners
+
+Question: What is Terraform format?
+Ans: The terraform fmt command is used to rewrite Terraform configuration files to a canonical format and style.
+For use-case, where all configuration written by team members needs to have a proper style of code, terraform fmt can be used.
+
+Question: What is Terraform Import and DataSource?
+Ans: Terraform is able to import existing infrastructure. 
+This allows you to take resources that you’ve created by some other means and bring them under Terraform management.
+The current implementation of Terraform import can only import resources into the state. It does not generate a configuration.
+Because of this, prior to running terraform import, it is necessary to write a resource configuration block manually for the resource, to which the 
+imported object will be mapped.
+terraform import aws_instance.myec2 instance-id
+Data sources allow data to be fetched or computed for use elsewhere in Terraform configuration.
+
+Question: What is Terraform Output command?
+Ans: The terraform output command is used to extract the value of an output variable from the state file.
+
+Question: What is Modules in Terraform?
+Ans: A module is a simple directory that contains other .tf files. Using modules we can make the code reusable. Modules are local or remote.
+Calling Child Modules:
+Input variables- to accept values from the calling module.
+Output values- to return results to the calling module, which it can then use to populate arguments elsewhere.
+Resources- to define one or more infrastructure objects that the module will manage.
