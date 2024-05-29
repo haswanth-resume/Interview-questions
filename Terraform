@@ -1,0 +1,43 @@
+Did you implement the Terraform pipeline and how?
+What is remote state manager?
+How do you implement rolling updates?
+DO you know about Zero Downtime Deployment?
+Question: What is dependencies between resources?
+Ans: Explicitly specifying a dependency is only necessary when a resource relies on some other resource’s behavior but doesn’t access any of that 
+resource’s data in its arguments
+For example, if you have an EC2 instance and an S3 bucket, you might want the EC2 instance to be created before the S3 bucket. 
+In this case, you can specify the dependency explicitly using depends_on:
+By doing this, Terraform ensures that the EC2 instance is created before the S3 bucket during the execution of terraform apply.
+Question: How to handle sensitive data and secrets in terraform?
+Ans: Mark Variables as Sensitive:
+Terraform allows you to mark input variables as “sensitive.” When you do this, Terraform redacts the secrets from the console output.
+For example, if you have an API key or a database password, you can mark it as sensitive in your configuration.
+Here’s how you can define a sensitive variable:
+variable "api_key" {
+  type    = string
+  sensitive = true
+}
+Use Environment Variables:
+Store secret values (such as API keys, passwords, or tokens) in environment variables.
+However, keep in mind that anyone with access to the host will also have access to these environment variables.
+Remote State Storage:
+By default, Terraform stores the state file locally (as unencrypted JSON), which can expose sensitive data if someone gains access to the project files.
+Consider using a remote backend (such as DigitalOcean Spaces) to store your state. Remote backends automatically encrypt data at rest, enhancing security.
+Question: What are workspaces in terraform?
+Ans: Terraform starts with a single workspace named “default”.
+The workspace feature of Terraform allows users to switch between multiple instances of a single configuration with a unique state file.
+For local states, Terraform stores the workspace states in a directory called terraform.tfstate.d.
+Workspace commands
+The terraform workspace new command is used to create a new workspace and switched to a new workspace.
+The terraform workspace list command is used to list all existing workspaces.
+The terraform workspace select command is used to choose a different workspace to use for further operations.
+The terraform workspace delete command is used to delete an existing workspace.
+The terraform workspace show command is used to output the current workspace.
+Note: Terraform Cloud and Terraform CLI both have features called “workspaces,” but they’re slightly different.
+Question: When statefile is locked and write the unlock command?
+Ans: State locking happens automatically on all operations that could write state. You won’t see any message that it is happening. If state locking fails, 
+Terraform will not continue. You can disable state locking for most commands with the -lock flag but it is not recommended.
+Terraform has a force-unlock command to manually unlock the state if unlocking failed.
+First, identify the lock ID associated with the state you want to unlock. You can find this lock ID in the .tfstate.lock file.
+Run the following command, replacing LOCK_ID with the actual lock ID:
+terraform force-unlock LOCK_ID
