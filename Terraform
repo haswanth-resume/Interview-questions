@@ -2,6 +2,8 @@ Question: Did you implement the Terraform pipeline and how?
 Ans: Create a project in Azure Devops Organization, create terraform code, define Ci/CD steps like in azure-pipeline.yml file write the steps of code checkout, running terraform commands, archiving the terraform plan as an artifact.
 configure Azure pipelines and trigger pipeline.
 
+Notes: Every build needs to run on agent and every agent needs to be run on a VM.
+
 Question: What is remote state manager in Terraform?
 Ans: Remote state management simplifies collaboration, reduces conflicts and enhances coordination when working with Terraform in a team.
 
@@ -10,14 +12,15 @@ Ans: Rolling updates in Terraform refer to a deployment strategy where newer ins
 The goal is to keep the services continuously available throughout the deployment process, minimizing downtime and ensuring a smooth transition to the updated version.
 
 Question: Do you know about Zero Downtime Deployment?
-Zero Downtime Deployment (ZDD) is a practice that ensures services remain available to users even during software updates. The goal is to make changes without causing any noticeable disruption.
+Zero Downtime Deployment (ZDD) is a practice that ensures services remain available to users even during software updates.
+The goal is to make changes without causing any noticeable disruption.
 In the context of Terraform, ZDD involves strategies to update infrastructure seamlessly. Let’s explore two key techniques:
-Create Before Destroy
-Local-Exec or Remote-Exec Provisioner
+->Create Before Destroy
+->Local-Exec or Remote-Exec Provisioner
 
 Question: What is dependencies between resources?
 Ans: Explicitly specifying a dependency is only necessary when a resource relies on some other resource’s behavior but doesn’t access any of that 
-resource’s data in its arguments
+resource’s data in its arguments.
 For example, if you have an EC2 instance and an S3 bucket, you might want the EC2 instance to be created before the S3 bucket. 
 In this case, you can specify the dependency explicitly using depends_on:
 By doing this, Terraform ensures that the EC2 instance is created before the S3 bucket during the execution of terraform apply.
@@ -83,6 +86,7 @@ Because of this, prior to running terraform import, it is necessary to write a r
 imported object will be mapped.
 terraform import aws_instance.myec2 instance-id
 Data sources allow data to be fetched or computed for use elsewhere in Terraform configuration.
+Data resources cause Terraform only to read objects.
 
 Question: What is Terraform Output command?
 Ans: The terraform output command is used to extract the value of an output variable from the state file.
