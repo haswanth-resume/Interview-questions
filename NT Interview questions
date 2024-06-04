@@ -1,6 +1,44 @@
-How to create log analytics in VM?
+1. How to create log analytics in VM?
 Ans: After creating VM go to portal and go to Azure Monitor and in Overview section click on Not-monitored and enable it. 
 We can also set alerts based on CPU percentage, Available Memory, Data Disk IOPS consumed percentage, OS Disk IOPS consumed percentage, Network IN/OUT total.
 
 link for Deploying a .NET Application using Azure CI/CD Pipeline
 https://medium.com/@ougabriel/deploy-a-net-application-using-azure-ci-cd-pipeline-and-0eea18aedbb5
+
+2. Why we are using .exe file?
+
+3. What is solution after build why we use?
+
+4. Which build tools you have worked on?
+
+5, What is NSG, Inbound rule?
+
+6. How can we connect from Azure pipleine to Azure portal?
+Ans: In Azure portal got to App registration and create Service principel, create secret ID, add app role
+and in project settings in service connection, create service connection and select azure resource manager, 
+select automatic it will show the sevice pricipel you have created and select it.
+
+7. What are libraries in Azure pipeline?
+
+8. What is Artifact section?
+
+9. Explain hierarchy in Azure?
+Ans: Management groups -> tenants -> subscriptions -> resource groups -> resources
+
+10. How to increase webapp hardwares?
+
+11. What is difference between Azure region and Avaialability Zone?
+
+12. What is windows defender?
+
+13. Explain Nuget plugin?
+
+14. What is Multiregion Deployment?
+
+15. What are task groups?
+
+16. What is external packages?
+
+
+
+
