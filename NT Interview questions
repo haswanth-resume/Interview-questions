@@ -1,3 +1,6 @@
 How to create log analytics in VM?
 Ans: After creating VM go to portal and go to Azure Monitor and in Overview section click on Not-monitored and enable it. 
 We can also set alerts based on CPU percentage, Available Memory, Data Disk IOPS consumed percentage, OS Disk IOPS consumed percentage, Network IN/OUT total.
+
+link for Deploying a .NET Application using Azure CI/CD Pipeline
+https://medium.com/@ougabriel/deploy-a-net-application-using-azure-ci-cd-pipeline-and-0eea18aedbb5
