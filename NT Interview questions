@@ -2,16 +2,25 @@
 Ans: After creating VM go to portal and go to Azure Monitor and in Overview section click on Not-monitored and enable it. 
 We can also set alerts based on CPU percentage, Available Memory, Data Disk IOPS consumed percentage, OS Disk IOPS consumed percentage, Network IN/OUT total.
 
-link for Deploying a .NET Application using Azure CI/CD Pipeline
+Note: link for Deploying a .NET Application using Azure CI/CD Pipeline
 https://medium.com/@ougabriel/deploy-a-net-application-using-azure-ci-cd-pipeline-and-0eea18aedbb5
 
 2. Why we are using .exe file?
+Ans: it contains the compiled and linked version of your code that is ready to run on a Windows system.
+This allows for automated testing and deployment, ensuring that the software can be reliably executed in its intended environment.
 
-3. What is solution after build why we use?
+3. What is solution file after build, why we use?
+Ans: This is a file used by Visual Studio that organizes projects into a single compound project with build information.
+It’s used during the build process in the CI/CD pipeline to compile and link all the necessary projects together to create the .exe file.
 
 4. Which build tools you have worked on?
+Ans: NuGet manages dependencies and MSBuild orchestrates the build process.
 
-5, What is NSG, Inbound rule?
+5. What is NSG, Inbound rule?
+NSG (Network Security Group): is a feature used in cloud environments like Microsoft Azure to control network traffic to and from Azure resources.
+It acts as a firewall that filters traffic based on predefined security rules.
+Inbound Rules: within an NSG define the criteria for allowing or denying traffic coming into a network interface, VM, or subnet. 
+These rules can specify allowed protocols, port ranges, source IP ranges, and other parameters to control access.
 
 6. How can we connect from Azure pipleine to Azure portal?
 Ans: In Azure portal got to App registration and create Service principel, create secret ID, add app role
@@ -19,11 +28,30 @@ and in project settings in service connection, create service connection and sel
 select automatic it will show the sevice pricipel you have created and select it.
 
 7. What are libraries in Azure pipeline?
+Ans: In Azure Pipelines, libraries are collections of variables and secrets that you can use across multiple pipelines. 
+They help you manage common values more efficiently and securely:
+Variable Groups: Store values that you want to make available across multiple pipelines, like connection strings, file paths, or environment-specific data.
+Secure Files: Store files like certificates, provisioning profiles, or other secrets that you want to use in your build or release pipelines.
 
-8. What is Artifact section?
+8. What is Artifact section in Azure pipeline?
+Ans: In Azure Pipelines, the Artifact section is where you define the storage and handling of build artifacts, 
+which are the files and data produced by a build or release pipeline. 
+These artifacts can include compiled code, test results, logs, or any other files generated during the build and release process.
+Here’s what you can do in the Artifact section:
+Publish Artifacts: Save the output of your build process to Azure Pipelines or to an external store like Azure Blob storage.
+Download Artifacts: Retrieve artifacts for use in different stages of your pipeline, such as deployment to various environments.
+Retention Policies: Set rules for how long artifacts should be retained before being automatically deleted.
+Artifacts are crucial for continuous integration and delivery (CI/CD) as they allow for automated testing and deployment of the software you’re developing.
+They ensure that every part of your pipeline has access to the necessary components to function correctly.
 
 9. Explain hierarchy in Azure?
-Ans: Management groups -> tenants -> subscriptions -> resource groups -> resources
+Ans: Tenants -> Management Groups -> Subscriptions -> Resource Groups -> Resources.
+Tenants: The top-level within Azure. It’s associated with a domain and represents an organization.
+Management Groups: These are containers that help organize tenants and provide policy and compliance management across multiple subscriptions.
+Subscriptions: Subscriptions are under management groups and are used to manage billing and permissions for resources.
+Resource Groups: Within subscriptions, resource groups are used to organize resources into collections that share the same lifecycle, permissions, and policies.
+Resources: The individual instances of services like VMs, databases, etc., that reside within resource groups.
+
 
 10. How to increase webapp hardwares?
 
