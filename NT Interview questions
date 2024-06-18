@@ -53,19 +53,43 @@ Resource Groups: Within subscriptions, resource groups are used to organize reso
 Resources: The individual instances of services like VMs, databases, etc., that reside within resource groups.
 
 
-10. How to increase webapp hardwares?
+10. how to improve or increase hardware for a web application server?
+Ans: We can scale up the App Service plan.
+This involves selecting a higher pricing tier that offers more CPU, memory, and other resources.
 
 11. What is difference between Azure region and Avaialability Zone?
+Ans: An Azure region is a set of datacenters deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network. 
+It’s essentially a geographical area on the planet where Azure services are available.
+An Availability Zone, on the other hand, is a high-availability offering that protects your applications and data from datacenter failures.
+Availability Zones are unique physical locations within an Azure region. 
+Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking.
 
 12. What is windows defender?
+Ans: Windows Defender, also known as Microsoft Defender Antivirus in the latest versions of Windows, is an anti-malware component of Microsoft Windows. 
+It offers protection against viruses, spyware, and other malicious software. 
+It runs in the background and performs real-time protection, system scanning, and cleaning of malware. 
+It’s included by default in Windows 10 and Windows 11, providing a baseline level of security for users without the need for additional antivirus software.
 
 13. Explain Nuget plugin?
+Ans: NuGet is a package manager for the Microsoft development platform including .NET. 
+It’s used to consume packages from your projects and to publish your own packages for others to use. 
+A NuGet plugin typically refers to an extension that adds certain functionalities to NuGet, 
+such as connecting to a private feed, integrating with other tools, or enhancing security.
 
 14. What is Multiregion Deployment?
+Ans: Multi-region deployment is a cloud computing strategy where an application is deployed across multiple geographical regions. 
+This approach increases the application’s availability and resilience by ensuring that even if one region experiences an outage, the application can continue to operate from other regions. 
+It also helps in reducing latency for users by serving them from the nearest region.
 
 15. What are task groups?
+Ans: In Azure DevOps, a task group allows you to encapsulate a sequence of tasks, already defined in a build or a release pipeline, into a single reusable task. 
+This is particularly useful when you have multiple build or release pipelines that share the same set of tasks. 
+By using task groups, you can manage and update those tasks in one place.
 
-16. What is external packages?
+16. What are external packages?
+Ans: External packages in software development are libraries, frameworks, or tools that are not part of the standard library of a programming language or platform. 
+They are developed by third parties and can be included in your projects to extend functionality or add new features. 
+These packages can be sourced from package managers like NuGet for .NET, npm for Node.js, or PyPI for Python.
 
 
 
