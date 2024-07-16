@@ -1,4 +1,16 @@
 1. We are getting secret values error while pushing to the git repo what is the command to resolve that?
 
-
 2. What is the major issue that resolvedd by yourself?
+
+3. Difference between availability set and availability region?
+Ans:
+Availability Sets:
+Distributes VMs across fault domains within the same datacenter.
+Reduces risk of simultaneous VM downtime due to hardware or update failures.
+Applicable only to VMs.
+Acceptable downtime: ~22 minutes/month.
+Availability Zones:
+Spreads VMs across different zones within an Azure region.
+Provides 99.99% SLA (less than 5 minutes downtime/month).
+Protects VMs from entire datacenter failures.
+Applicable to various Azure services.
