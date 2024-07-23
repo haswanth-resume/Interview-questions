@@ -1,11 +1,39 @@
 1. How will you implement Vulnerability check by scanning the image in CI/CD Pipeline?
- 
+Ans: Enable Microsoft Defender for Cloud’s advanced security plan, which includes image scanning for vulnerabilities.
+Images in your container registries are scanned for vulnerabilities during events like image pushes, imports, and recent pulls.
+The findings are classified and presented as actionable security recommendations.
+
 2. Have you worked on Istio/ServiceMesh for Load Balancing Traffic Routing rules?
- 
+ Ans: Istio allows you to distribute traffic across different subsets using weights.
+Example YAML snippet for weighted routing:
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: my-service
+spec:
+  hosts:
+    - my-service.example.com
+  http:
+    - route:
+        - destination:
+            host: my-service
+            subset: v1
+          weight: 80
+        - destination:
+            host: my-service
+            subset: v2
+          weight: 20
+
 3. Have you configured Azure API Management and configured Policy and rules?
- 
+Ans: No
 4. How good are you with different subnets configuration, VNet Integration, Peering etc?
- 
+Ans: I have created vnet and splitted ip range for developers, admins, testers into different subnets.
+VNet integration enables communication between your Azure Web Apps (or other PaaS services) and VNets.
+Benefits:
+*Securely access resources in VNets from your app.
+*Use private IP addresses for communication.
+*Avoid exposing services to the public internet.
+
 5. Are you good in Powershell Scripting for maintaining Admin Tasks?
  
 6. They asked kubernetes different objects, replicaset, Troubleshooting issues, Blue/Green Deployment, Canay Deployments.
