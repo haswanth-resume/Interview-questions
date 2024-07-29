@@ -26,6 +26,7 @@ spec:
 
 3. Have you configured Azure API Management and configured Policy and rules?
 Ans: No
+
 4. How good are you with different subnets configuration, VNet Integration, Peering etc?
 Ans: I have created vnet and splitted ip range for developers, admins, testers into different subnets.
 VNet integration enables communication between your Azure Web Apps (or other PaaS services) and VNets.
@@ -45,7 +46,6 @@ Benefits:
 9. Communication between Microservices using Async process like Azure Service Bus (Pub/Sub Messaging) and Function Apps.
  
 10. They asked about Iac Tools like (Terraform) exposure and expertise.
- 
  
 These are the questions they asked in the interviews.
  
@@ -69,11 +69,11 @@ These are the questions they asked in the interviews.
  
 10. Questions related to docker.
  
-11. Asked me to explain one cicd pipeline i created.
+11. Asked me to explain one ci/cd pipeline i created.
  
-12. Scenario based like we have a . Net application and what all will be considered for CICd creation.
+12. Scenario based like we have a . Net application and what all will be considered for CI/CD creation.
  
-13. Scripting related languages and familiarityon it.
+13. Scripting related languages and familiarity on it.
  
 14. Kubernetes debugging related and monitoring tool i have used and how to identify the issues.
  
@@ -88,58 +88,31 @@ These are the questions they asked in the interviews.
 Asked to me
 
 How many years of experience in DevOps?
+
 Explain the CI/CD pipeline you created.
+
 Did you implement the Terraform pipeline and how?
+
 Are there any known scripting languages?
+
 Testing frameworks used in pipelines.
+
 Which type of application have you created?
+
 Which tools were used in the pipeline?
+
 How do you manage secrets, certificates using Azure Key Vault?
+
 What branching strategies have you used?
+
 Did you work on the PowerShell language for any admin tasks?
+
 which monitor tool you have used for your application?
+
 how frequently deployment happens?
+
 Did you know about resource limit in Kubernetes?
+
 Did you created any Kubernetes Cluster?
-What is remote state manager?
-How do you implement rolling updates?
-DO you know about Zero Downtime Deployment?
-Question: What is dependencies between resources?
-Ans: Explicitly specifying a dependency is only necessary when a resource relies on some other resource’s behavior but doesn’t access any of that 
-resource’s data in its arguments
-For example, if you have an EC2 instance and an S3 bucket, you might want the EC2 instance to be created before the S3 bucket. 
-In this case, you can specify the dependency explicitly using depends_on:
-By doing this, Terraform ensures that the EC2 instance is created before the S3 bucket during the execution of terraform apply.
-Question: How to handle sensitive data and secrets in terraform?
-Ans: Mark Variables as Sensitive:
-Terraform allows you to mark input variables as “sensitive.” When you do this, Terraform redacts the secrets from the console output.
-For example, if you have an API key or a database password, you can mark it as sensitive in your configuration.
-Here’s how you can define a sensitive variable:
-variable "api_key" {
-  type    = string
-  sensitive = true
-}
-Use Environment Variables:
-Store secret values (such as API keys, passwords, or tokens) in environment variables.
-However, keep in mind that anyone with access to the host will also have access to these environment variables.
-Remote State Storage:
-By default, Terraform stores the state file locally (as unencrypted JSON), which can expose sensitive data if someone gains access to the project files.
-Consider using a remote backend (such as DigitalOcean Spaces) to store your state. Remote backends automatically encrypt data at rest, enhancing security.
-Question: What are workspaces in terraform?
-Ans: Terraform starts with a single workspace named “default”.
-The workspace feature of Terraform allows users to switch between multiple instances of a single configuration with a unique state file.
-For local states, Terraform stores the workspace states in a directory called terraform.tfstate.d.
-Workspace commands
-The terraform workspace new command is used to create a new workspace and switched to a new workspace.
-The terraform workspace list command is used to list all existing workspaces.
-The terraform workspace select command is used to choose a different workspace to use for further operations.
-The terraform workspace delete command is used to delete an existing workspace.
-The terraform workspace show command is used to output the current workspace.
-Note: Terraform Cloud and Terraform CLI both have features called “workspaces,” but they’re slightly different.
-Question: When statefile is locked and write the unlock command?
-Ans: State locking happens automatically on all operations that could write state. You won’t see any message that it is happening. If state locking fails, 
-Terraform will not continue. You can disable state locking for most commands with the -lock flag but it is not recommended.
-Terraform has a force-unlock command to manually unlock the state if unlocking failed.
-First, identify the lock ID associated with the state you want to unlock. You can find this lock ID in the .tfstate.lock file.
-Run the following command, replacing LOCK_ID with the actual lock ID:
-terraform force-unlock LOCK_ID
+
+
