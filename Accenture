@@ -1,8 +1,42 @@
-How you monitor VM's using Azure monitor?
+1. How you monitor VM's using Azure monitor?
+Ans: Enable Azure Monitor for VMs:
+Navigate to the Azure portal.
+Go to Monitor > Virtual Machines.
+Select the VM you want to monitor and click on Enable under VM insights.
+Install the Azure Monitor Agent:
+The Azure Monitor agent needs to be installed on your VMs to collect data. This can be done automatically when you enable VM insights.
+Configure Data Collection:
+Define what data you want to collect, such as performance metrics, logs, and events. This is done through Data Collection Rules (DCRs).
+Analyze Data:
+Use the Metrics Explorer to visualize performance data like CPU usage, memory, and disk I/O.
+Use Log Analytics to query and analyze log data collected from your VMs.
+Set Up Alerts:
+Configure alerts to notify you of critical issues. Go to Monitor > Alerts and create rules based on specific conditions, such as high CPU usage or low available memory.
+Visualize Data with Workbooks:
+Create custom dashboards using Azure Monitor Workbooks to visualize and share insights from your monitoring data.
 
-How you check vulnerabilities in CI/CD pipeline?
+2. How you check vulnerabilities in CI/CD pipeline?
+Ans: Static Application Security Testing (SAST):
+Integrate SAST tools like SonarQube or Checkmarx into your CI/CD pipeline to analyze your source code for vulnerabilities during the build process.
+Software Composition Analysis (SCA):
+Use SCA tools like Snyk or WhiteSource to scan your dependencies for known vulnerabilities. These tools can be integrated into your CI/CD pipeline to automatically check for issues whenever new code is committed.
+Dynamic Application Security Testing (DAST):
+Implement DAST tools such as OWASP ZAP or Burp Suite to test your running applications for vulnerabilities. These tools simulate attacks on your application to identify potential security weaknesses.
+Container Security:
+If you’re using containers, tools like Aqua Security or Twistlock can scan your container images for vulnerabilities before they are deployed. Microsoft Defender for Container Registries is another option that integrates well with Azure.
+Infrastructure as Code (IaC) Security:
+Tools like Terraform or AWS CloudFormation can be scanned using tools like Checkov or TFLint to ensure your infrastructure code does not introduce vulnerabilities.
+Continuous Monitoring and Alerts:
+Set up continuous monitoring and alerting using tools like Prometheus, Grafana, or Azure Monitor to keep an eye on your application’s security posture in real-time.
+Automated Security Testing:
+Incorporate automated security tests into your CI/CD pipeline using tools like GitHub Actions or GitLab CI/CD. These can run security checks as part of your build and deployment process.
 
-Which terraform version is in market available?
+3. Which terraform version is in market available?
+Ans: 1.9.3
 
-How you can increase subnet range in V-nets?
+4. How you can increase subnet range in V-nets?
+Ans: Go to the Subnets section within your virtual network.
+Select the subnet you want to modify.
+Update the Subnet address range to include the new range.
+
 
