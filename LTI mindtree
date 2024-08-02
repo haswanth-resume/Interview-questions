@@ -1,4 +1,17 @@
 1. We are getting secret values error while pushing to the git repo what is the command to resolve that?
+Ans: If your configuration file contains sensitive data, consider using environment variables instead. 
+You can create a .env file and add it to your .gitignore to prevent it from being committed.
+# .env
+SECRET_KEY=your_secret_key
+
+Depending on your programming language, you can load the configuration file or environment variables in your code.
+For example, in Python, you can use the dotenv library:
+Python
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+secret_key = os.getenv('SECRET_KEY')
 
 2. What is the major issue that resolvedd by yourself?
 
