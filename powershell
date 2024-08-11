@@ -1,0 +1,68 @@
+we have consoles
+powershell ise for running scripts like .ps1 files
+powershell for running commands immediately
+Always use powershell as administrator
+
+works with .net framework, if .net version and powershell version is same then it is having more power
+
+
+cmdlets comes from
+PowerShell version,
+snap ins,
+Module.
+
+to get version of PowerShell version
+$PSVersionTable
+$ is used for variable
+
+to check additional snapins or modules are there
+Get-PSSnapin -Registered
+Get-Module  ---- to get modules from memory
+Get-Module -ListAvailable ----to get OS default modules
+To move default modules to modules
+Import-Module -Name TroubleshootingPack
+Get-module
+Get-Command -Module TroubleshootingPack
+
+To get event logs in computer
+Get-Command -Name *log* -CommandType cmdlet, function
+Get-Command -verb Get -noun *log*
+Get-Eventlog
+$env:PsModulePath---- To get how are modules are loaded
+Get-Command -Verb get -Noun *Service*
+Get-Service
+Get-Help
+Get-Help Get-Service
+
+Get-Service   {[-Name]    <string[]>]
+command        parameter   value
+parameter starts with "-"
+
+Get-Service -Name bits
+
+
+to view all variables
+get-psdrive or Get-ChildItem 
+to create a variable :
+$test="Hi this is variable"
+new-variable -name hello -value "how are you"
+${hello there}= "how are you"
+
+cd variable:
+get-command *variable*
+
+regular expressions
+"hello there" -match "\w*"
+$matches
+"fred.red@contoso.com" -match "[a-z]+\.[a-z]+@contoso.com"
+"Fred Red" -replace "([a-z]+)\s([a-z]+)", '$2, $1'
+
+Get-ChildItem C:\temp -Recurse | Select-string -Pattern "89.185.206.252" -List
+
+Get-Service | Get-Member
+
+
+Get-Service | out-file c:\file1.txt | stop-service
+
+
+Get-Service | select-object name, vm, cpu, ws, processname -first 10 | format-table
