@@ -94,3 +94,8 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
+If we have two nsg's for one vm one with subnet and another direct to nic which connection we use with url?
+
+
+What are the uses of service endpoints?
+
