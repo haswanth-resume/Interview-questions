@@ -1,0 +1,15 @@
+After creating the App Registration, Contributor role needs to be added to it. Please find below steps for adding the role to App Registration.
+
+Goto Subscriptions, In Left panel go to Access Control (IAM).
+ 
+
+In Add role assignment go to Privileged administrator roles and select Contributor role.
+ 
+Click on next, In Assign access to select User, group, or service principal and give the member’s name of App Registration.
+  
+
+Click on Review and assign.
+ 
+
+
+
