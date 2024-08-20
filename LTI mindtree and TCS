@@ -103,4 +103,4 @@ What are the uses of service endpoints?
 
 Ans: Service endpoints allow you to secure your critical Azure service resources to only your virtual networks.
 This means that your data is not exposed to the public internet, reducing the risk of unauthorized access.
-Ex: Azure Storage- Allows secure access to Azure Storage accounts from within your virtual network
+Ex: Azure Storage- Allows secure access to Azure Storage accounts from within your virtual network.
