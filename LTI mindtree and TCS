@@ -95,7 +95,12 @@ steps:
     publishLocation: 'Container'
 
 If we have two nsg's for one vm one with subnet and another direct to nic which connection we use with url?
-
-
+Subnet NSG: This NSG applies to all resources within the subnet. It filters traffic before it reaches the VM’s NIC.
+NIC NSG: This NSG applies specifically to the VM’s NIC. It filters traffic after it has passed through the subnet NSG.
+When accessing a URL or any resource, the traffic will be evaluated against the rules in both NSGs. 
+The rules with the highest priority (lowest number) will be applied first, regardless of whether they are in the subnet NSG or the NIC NSG
 What are the uses of service endpoints?
 
+Ans: Service endpoints allow you to secure your critical Azure service resources to only your virtual networks.
+This means that your data is not exposed to the public internet, reducing the risk of unauthorized access.
+Ex: Azure Storage- Allows secure access to Azure Storage accounts from within your virtual network
