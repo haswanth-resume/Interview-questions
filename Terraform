@@ -6,6 +6,7 @@ Notes: Every build needs to run on agent and every agent needs to be run on a VM
 
 Question: What is remote state manager in Terraform?
 Ans: Remote state management simplifies collaboration, reduces conflicts and enhances coordination when working with Terraform in a team.
+Terraform remote state is a mechanism that allows Terraform to store its state information in a centralized location, such as an object storage bucket or a remote key-value store.
 
 Question: How do you implement rolling updates?
 Ans: Rolling updates in Terraform refer to a deployment strategy where newer instances or resources (such as containers) are incrementally added to the infrastructure, while older resources are gradually drained and removed. 
