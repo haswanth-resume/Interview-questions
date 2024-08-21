@@ -13,7 +13,9 @@ import os
 load_dotenv()
 secret_key = os.getenv('SECRET_KEY')
 
-2. What is the major issue that resolvedd by yourself?
+2. What is the biggest issue you faced?
+Ans: The most significant challenge I faced was managing a sudden influx of traffic during a product launch.
+We had to quickly scale our application to handle the load, which involved optimizing database queries and adding more servers.
 
 3. Difference between availability set and availability region?
 Ans:
@@ -110,3 +112,10 @@ Ex: Azure Storage- Allows secure access to Azure Storage accounts from within yo
 7. What is NAT (Network Address Translation), and why is it used?
 Ans: A Network Address Translation (NAT) is the process of mapping an internet protocol (IP) address to another by changing the header of IP packets while in transit via a router.
 This helps to improve security and decrease the number of IP addresses an organization needs.
+
+8.How do you scale your application?
+Ans: I use auto-scaling groups in AWS or Kubernetes Horizontal Pod Autoscaling to dynamically adjust resources based on traffic patterns and resource utilization.
+
+9. How do you rollback if something fails?
+Ans:💡 I roll back by deploying the previous version of the application or by using container orchestration tools to revert to the last stable state.
+I also ensure comprehensive monitoring and alerts to detect failures early. 
