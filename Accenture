@@ -39,4 +39,8 @@ Ans: Go to the Subnets section within your virtual network.
 Select the subnet you want to modify.
 Update the Subnet address range to include the new range.
 
+5. What is the difference between a Public and Private Subnet and what differentiates it?
+Ans: A public subnet is accessible directly from the internet, while a private subnet is not. 
+Public subnets are typically used for resources that need public access, like web servers, while private subnets are used for resources that should not be directly exposed, like databases.
+
 
