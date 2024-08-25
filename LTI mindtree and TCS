@@ -119,3 +119,7 @@ Ans: I use auto-scaling groups in AWS or Kubernetes Horizontal Pod Autoscaling t
 9. How do you rollback if something fails?
 Ans:💡 I roll back by deploying the previous version of the application or by using container orchestration tools to revert to the last stable state.
 I also ensure comprehensive monitoring and alerts to detect failures early. 
+
+10. Use of Azure service endpoints? 
+Service endpoints allow private IP addresses in a virtual network (VNet) to reach an Azure service endpoint without needing a public IP address. This allows for secure and direct connectivity to Azure services using the Azure backbone network.
+For example, if an application is running in an Azure VNet that is locked down for all traffic, but still needs to connect to Key Vault, service endpoints can be used to allow the application to access Key Vault
