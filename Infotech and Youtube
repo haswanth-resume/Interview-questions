@@ -3,15 +3,25 @@ https://www.youtube.com/watch?v=GX6fOvaS0Xs
 https://www.ambitionbox.com/interviews/accenture-question/what-are-key-elements-which-are-there-in-continuous-testing-tools-JDbm6rf0?source=ambitionbox&campaign=answers_page
 https://github.com/iam-veeramalla/Azure-zero-to-hero
 
-How one container can communicate to another container?
+1. How one container can communicate to another container?
+Ans: We have three types of networks in Docker
+Bridge
+Overlay
+Host
+Bridge is default network and called as dockero or eouth 
 
-How many clusters you have used in production environment?
+2. How many clusters you have used in production environment?
+Ans: 2 Master nodes and 12 worker nodes.
 
-Can you architect a application?
+3. Can you architect a application?
 Ans: Yes, I can architect an  application and time will depend on the complexity of the application.
 
-Which server you use for kubernetes?
+4. Which server you use for kubernetes?
+Ans: We have used Linux server.
 
-Did you worked on terratest before?
+5. Did you worked on terratest before?
+Ans: No
 
-How can you detect the serices?
+6. How can you detect the services?
+Ans: Using match labels and selectors.
+
