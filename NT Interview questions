@@ -91,6 +91,9 @@ Ans: External packages in software development are libraries, frameworks, or too
 They are developed by third parties and can be included in your projects to extend functionality or add new features. 
 These packages can be sourced from package managers like NuGet for .NET, npm for Node.js, or PyPI for Python.
 
+17. What you do when pipeline got failed?
+
+18. What if application we deployed on 7 servers out of 5 are working fine and 2 were not working?
 
 
 
