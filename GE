@@ -1,4 +1,11 @@
-How you authenticate git to Azure repo?
+1. How you authenticate git to Azure repo?
+Ans: Using PAT, create an PAT in github settings and in Azure repos provide username and PAT.
+Alternative ways:
+SSH Key Authentication:
+Generate SSH Keys using command:- ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Add the SSH Key to Azure DevOps
+Configure Git to Use SSH
+
 
 SonarQube
 
