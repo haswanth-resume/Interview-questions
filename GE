@@ -1,0 +1,13 @@
+How you authenticate git to Azure repo?
+
+SonarQube
+
+
+GitHub runners, GitHub ci/cd
+
+
+Kubernetes AWS EC2, EKS
+monitoring tools like prometheus
+
+how to setup Kubernetes
+
