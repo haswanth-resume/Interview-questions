@@ -1,65 +1,11 @@
-1.How do you resolve a merge conflict in Git?
-Ans: Open the conflicting files, manually resolve the conflicts, and then commit the changes.
-
-2. What is rebasing in Git?
-Rebasing is the process of moving or combining a sequence of commits to a new base commit.
-git rebase <branch-name>
-
-3. To revert a commit that has been pushed and made public, follow these steps:
-Checkout the Branch: Switch to the branch where you want to revert the commit.
-git checkout <branch-name>
-Find the Commit to Revert: Use ‘git log’ to find the commit hash of the commit you want to revert.
-git log
-Revert the Commit: Use ‘git revert’ followed by the commit hash of the commit you want to revert.
-git revert <commit-hash>
-Review Changes: Git will open your default text editor to confirm the revert message. Save and close the editor to proceed.
-Push the Revert: Finally, push the reverted commit to the remote repository.
-git push origin <branch-name>
-What is the function of ‘git reset’?
-The function of ‘Git Reset’ is to reset your index as well as the working directory to the state of your last commit.
-
-4. What is the difference between git reflog and log?
-Ans: Git Log: It shows a history of commits (changes) made in your Git repository.It lists out commits in linear order, showing who made each change, when they made it, and the commit message.
-Git Reflog: It stands for “reference log”. It records changes to the HEAD (current branch pointer) and permits you to see a timeline of recent movements within the repository, like commits, checkouts, merges, etc.
-It is effective for recovering lost commits or branches that are no longer visible in the regular log.
-
-5. Explain the difference between reverting and resetting?
-Resetting:This command is used to change the present state of the repository to a precise point in its history. 
-When you refresh, Git moves the ‘HEAD’ (present branch) to the particular commit, likely changing the files in your working directory and staging area.
-It is like reversing to a definite point in time, and it can be used to discard changes.
-Reverting: Reverting, on the other a hand, makes new commit that undoes the changes made by specific commit. 
-In place of removing or changing history like resetting does, reverting adds new commit that effectively reverses the changes introduced by the commit you specify.
-
-6. What is the HEAD in Git?
-In Git, HEAD is a source to the current branch or commit you are working on.
-HEAD normally shows the recent commit of the current branch and moves when you switch branches or check out exact commits.
- 
-7. How to resolve a conflict in Git?
-Discover Conflicting Files: Find the files where conflicts have take place because of changes from unique branches.
-Correct Files to Repair Conflicts: Alter the files to sync conflicting changes and block future conflicts.
-Stage solved Files: Use ‘git add’ to add the resolved files to the staging area. Commit the Changes: Complete the process by committing the changed files applying ‘git commit’ .
-
-8.Explain the difference between `git merge` and `git rebase` and when you would use each?
-‘git merge‘ merges changes from one branch into another, keeping distinguish branch histories.
-It forms merge commits that directly show where branches came together.
-‘git rebase‘ reforms history by using commits from one branch onto another, causing in a linear sequence of commits.
-Prefer ‘merge’ to keep distinct branch timelines and use ‘rebase’ for enhancing commit history before merging branches.
-The syntax used for rebase is “git rebase [new-commit] “ 
-
-9. What is the function of the git cherry-pick command?
-The git cherry-pick command uses exact commits from one branch to another, allowing selective merging of changes without merging entire branches.
-
-10. What is the function of ‘git diff ’ in git?
-‘git diff ’ shows the changes between commits, commit and working tree etc.
-
-11. What is the use of ‘git log’?
-To find specific commits in your project history- by author, date, content or history ‘git log’ is used.
-
-12. While pushing the code into git repo giving conflict error?
+1. While pushing the code into git repo giving conflict error?
 Ans: It sounds like you’re encountering a merge conflict while pushing your code to the Git repository. 
 This usually happens when changes in your local branch conflict with changes in the remote branch. Here are some steps to resolve it:
 Fetch the latest changes from the remote repository:
 git fetch origin
+       or 
+Find which files cause conflicts by the command
+git status
 Merge the changes from the remote branch into your local branch:
 git merge origin/main
 Replace main with the name of your remote branch if it’s different.
@@ -73,3 +19,60 @@ Commit the merge:
 git commit -m "Resolved merge conflicts"
 Push the changes to the remote repository:
 git push origin main
+
+2. What is rebasing in Git?
+Ans: Rebasing is the process of moving or combining a sequence of commits to a new base commit.
+git rebase <branch-name>
+
+3. To revert a commit that has been pushed and made public, follow these steps:
+Checkout the Branch: Switch to the branch where you want to revert the commit.
+git checkout <branch-name>
+Find the Commit to Revert: Use ‘git log’ to find the commit hash of the commit you want to revert.
+git log
+Revert the Commit: Use ‘git revert’ followed by the commit hash of the commit you want to revert.
+git revert <commit-hash>
+Review Changes: Git will open your default text editor to confirm the revert message. Save and close the editor to proceed.
+Push the Revert: Finally, push the reverted commit to the remote repository.
+git push origin <branch-name>
+
+4. What is the difference between git reflog and log?
+Ans: Git Log: It shows a history of commits (changes) made in your Git repository.
+It lists out commits in linear order, showing who made each change, when they made it, and the commit message.
+Git Reflog: It stands for “reference log”. 
+It records changes to the HEAD (current branch pointer) and permits you to see a timeline of recent movements within the repository, like commits, checkouts, merges, etc.
+It is effective for recovering lost commits or branches that are no longer visible in the regular log.
+
+5. Explain the difference between reverting and resetting?
+Ans: Resetting:This command is used to change the present state of the repository to a precise point in its history. 
+When you refresh, Git moves the ‘HEAD’ (present branch) to the particular commit, likely changing the files in your working directory and staging area.
+It is like reversing to a definite point in time, and it can be used to discard changes.
+The function of ‘Git Reset’ is to reset your index as well as the working directory to the state of your last commit.
+Reverting: Reverting, on the other a hand, makes new commit that undoes the changes made by specific commit. 
+In place of removing or changing history like resetting does, reverting adds new commit that effectively reverses the changes introduced by the commit you specify.
+Key Differences
+History Alteration: Resetting changes the commit history, while reverting preserves it by adding a new commit.
+Safety: Reverting is safer for shared repositories, whereas resetting is more suitable for local changes.
+
+6. What is the HEAD in Git?
+Ans: In Git, HEAD is a source to the current branch or commit you are working on.
+HEAD normally shows the recent commit of the current branch and moves when you switch branches or check out exact commits.
+ 
+7.Explain the difference between `git merge` and `git rebase` and when you would use each?
+Ans: ‘git merge‘ merges changes from one branch into another, keeping distinguish branch histories.
+It forms merge commits that directly show where branches came together.
+‘git rebase‘ reforms history by using commits from one branch onto another, causing in a linear sequence of commits.
+Prefer ‘merge’ to keep distinct branch timelines and use ‘rebase’ for enhancing commit history before merging branches.
+The syntax used for rebase is “git rebase [new-commit] “ 
+
+8. What is the function of the git cherry-pick command?
+Ans: The git cherry-pick command uses exact commits from one branch to another, allowing selective merging of changes without merging entire branches.
+
+9. What is the function of ‘git diff ’ in git?
+Ans: ‘git diff ’ shows the changes between commits, commit and working tree etc.
+
+10. What is the use of ‘git log’?
+Ans: To find specific commits in your project history- by author, date, content or history ‘git log’ is used.
+
+
+
+
