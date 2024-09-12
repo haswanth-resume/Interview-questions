@@ -1,0 +1,14 @@
+1. Where is the dependency of Maven loads from?
+Ans: sh 'mvn -s settings.xml -DskipTests install'
+To download Nexus dependencies it uses pom.xml file and for the proxy and user, password it uses settings.xml
+
+2. What are files created after unit tests and static code analysis?
+Ans: Checkstyle file and surefire-reports
+
+3. CI-jenkins steps:
+Ans: BUILD, UNIT TEST, INTEGRATION TEST, CODE ANALYSIS WITH CHECKSTYLE, CODE ANALYSIS with SONARQUBE, Publish to Nexus Repository Manager.
+Unit test, static code analysis, static code quality, automation, reports, deployment
+
+4. How to take backup og Jenkins server?
+Ans: goto jenkins folder in jenkins server and type below command
+tar -czvf jenkins_cicdjobs. tar.gz jenkins
