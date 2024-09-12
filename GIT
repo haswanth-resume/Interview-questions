@@ -73,6 +73,13 @@ Ans: ‘git diff ’ shows the changes between commits, commit and working tree 
 10. What is the use of ‘git log’?
 Ans: To find specific commits in your project history- by author, date, content or history ‘git log’ is used.
 
+11. How you authenticate git to Azure repo?
+Ans: Using PAT, create an PAT in github settings and in Azure repos provide username and PAT.
+Alternative ways:
+SSH Key Authentication:
+Generate SSH Keys using command:- ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Add the SSH Key to Azure DevOps
+Configure Git to Use SSH
 
 Github Actions video:
 https://www.youtube.com/watch?v=euEkYEFCrI8
