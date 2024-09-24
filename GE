@@ -31,3 +31,24 @@ terraform modules
 Kubernetes components
 
 jfrog
+
+Explain SDLC process
+Explain about Devops
+How to revert a git commit when it is not pushed to Git repo?
+Issues you have faced while using Git?
+What is GitOps?
+What branching strategies you have followed?
+What is command to login the docker container?
+What is Docker build command?
+What are the Types of Jenkins agents?
+What type of pipeline you created in Jenkins?
+How you setup CI that triggers the Jenkins pipeline?
+
+
+
+Devops Definition
+Branching strategy in git
+Complete flow of product deployment including checkout, build, scan , image push and deployment
+docker login to container
+building the docker image
+difference between gitops and jenkins advantages and disadvantages of using both tools
