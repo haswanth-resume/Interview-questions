@@ -98,3 +98,7 @@ Calling Child Modules:
 Input variables- to accept values from the calling module.
 Output values- to return results to the calling module, which it can then use to populate arguments elsewhere.
 Resources- to define one or more infrastructure objects that the module will manage.
+
+Question: What is terraform latest version?
+The latest stable version of Terraform is 1.9.8, released on October 16, 2024
+The latest version of the Terraform AzureRM provider is 4.5.0, released on October 10, 2024
