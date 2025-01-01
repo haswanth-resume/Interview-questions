@@ -1,11 +1,46 @@
-git merge error?
+1. git merge error?
+Ans: It sounds like you’re encountering a merge conflict while pushing your code to the Git repository. 
+This usually happens when changes in your local branch conflict with changes in the remote branch. Here are some steps to resolve it:
+Fetch the latest changes from the remote repository:
+git fetch origin
+       or 
+Find which files cause conflicts by the command
+git status
+Merge the changes from the remote branch into your local branch:
+git merge origin/main
+Replace main with the name of your remote branch if it’s different.
+Resolve the conflicts:
+Open the files with conflicts in your code editor.
+Look for conflict markers (<<<<<<<, =======, >>>>>>>) and decide how to merge the changes.
+After resolving the conflicts, remove the conflict markers and save the files.
+Add the resolved files to the staging area:
+git add <file_name>
+Commit the merge:
+git commit -m "Resolved merge conflicts"
+Push the changes to the remote repository:
+git push origin main
 
-branch error while pushing the code into git repo upstream error?
+2. branch error while pushing the code into git repo upstream error?
+Ans: This happens when your local branch isn't linked to a remote branch
+git push --set-upstream origin <branch_name>
 
-diff git rebase and git revert
+3. difference between git rebase and git revert
+Ans: Rebasing is the process of moving or combining a sequence of commits to a new base commit.
+git rebase <branch-name> 
+Reverting: Makes new commit that undoes the changes made by specific commit. 
+In place of removing or changing history like resetting does, reverting adds new commit that effectively reverses the changes introduced by the commit you specify.
+Key Differences.
 
-statefulsets in kubernetes?
-
+4. statefulsets in kubernetes?
+Ans: A StatefulSet in Kubernetes is a workload API object used to manage stateful applications. 
+Unlike Deployments, which manage stateless applications, StatefulSets maintain a sticky identity for each of their Pods. 
+This means that each Pod has a unique, persistent network identity and storage.
+StatefulSets are particularly useful for applications that require:
+Stable, unique network identifiers
+Persistent storage
+Ordered, graceful deployment and scaling
+Ordered, automated rolling updates
+For example, databases and applications that need to maintain state across reboots or rescheduling are good candidates for StatefulSets.
 services in kubernetes
 
 list runnning docker
