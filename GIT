@@ -84,5 +84,15 @@ Configure Git to Use SSH
 Github Actions video:
 https://www.youtube.com/watch?v=euEkYEFCrI8
 
+12. how to merge main branch to current working branch?
+Ans: create a new copy and checkout of current working branch
+checkout to main branch
+git pull origin main
+git pull origin
+git checkout copy branch name
+git merge main
+git status
+git commit -m "commit meassage"
+git push origin  copy branch name
 
 
