@@ -52,3 +52,107 @@ Complete flow of product deployment including checkout, build, scan , image push
 docker login to container
 building the docker image
 difference between gitops and jenkins advantages and disadvantages of using both tools
+
+CI/CD KT:
+
+
+SIRE:
+Solution Integration Reference Environment(Solution Testing)
+
+
+Products:
+APF
+BROWSER
+HABITAT
+SCADA
+ADMS
+
+
+Example APF:
+Dev Test
+Product Test
+Solution Test
+
+DEV stable -> PTE stable -> Solution stable(SIRE) 
+
+Example APF:
+Dev Test:
+When the new APF software MSI's is released they will be marked as DEV_Stable by CI pipeline.
+
+Production Test:
+In this ENV the Dev_Stable version of APF will be tested with SIRE_Stable version of other selective product and on success the product will be marked as PTE_Stable
+
+Solution Test:
+In this ENV the PTE_Stable version of APF will be tested with SIRE_Stable versions of all other product and on success the product will be finally marked as SIRE_Stable.
+
+In Devops Dashboard we have:
+Templates
+habitat
+scada
+apf
+browser
+adms
+
+
+How to check the PTE_Stable and SIRE_Stable version details?
+Option1-
+Step1: Download the product repos
+Step2: CD into one the folder and Run below git fetch command:
+git fetch origin "ref/notes/*:refs/notes/*"
+
+Step3: Run command 'gitk'
+Step4: this will open new window
+Step5: Go to view>>New View>>put below string in "Branch and tags" field
+notes/ge/ci/status/DEV_STABLE notes/ge/ci/status/PTE_STABLE
+notes/ge/ci/status/SRE_STABLE notes/ge/ci/metadata/artifacts
+
+Option2- Using tags script
+
+
+
+
+Currently 
+Distributed
+Distributes-dual
+
+
+
+
+How to provision infra from vscode
+infra created by provision will use to run our APF role
+
+
+By 2 ways we can provision infra
+1. through pipeline
+2. through vscode using ansible (we can create multiple hosts in AWS)
+
+
+
+CI/CD doubts
+
+ge.test     -  The roles that are required to installed as pre-req to run test
+ge.common   -  all the 3rd arty s/w that are needed as pre-req to install GE software are stored in ge.common
+ge.grid     -  This has main playbook that will be executed from CI CD pipeline that deploy all the required software
+
+
+ge.habitat   - all the ansible roles to install habitat
+ge.scada     - all the ansible roles to install scada
+ge.apf       - all the ansible roles to install apf
+ge.browser   - all the ansible roles to install browser
+ge.admss3    - all the ansible roles to install admss3
+
+
+
+Distributed sire:
+  --legacy apps: scada/habitat/apf/browser/adms s3
+
+
+gridos sire: 
+  --Microservice apps - ES/WAMS/DF/DDLR/MTA
+
+
+tsire:
+    apps: platform/apf/browser/scada/habitat
+
+adms s6 sire:
+  apps: adms s6
