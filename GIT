@@ -95,4 +95,16 @@ git status
 git commit -m "commit meassage"
 git push origin  copy branch name
 
+13. How to configure git merge tool?
+Ans:
+git checkout Add-EFEP-To-DSIRE-DTS
+git pull origin Add-EFEP-To-DSIRE-DTS
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+git config --global core.editor "code --wait"
+git config --global -e
+git merge branchname
+git mergetool
+git commit -am "commit message"
+git push origin destinationbranchname
 
