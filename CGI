@@ -1,0 +1,9 @@
+what is webapps service plan used for?
+
+how to change api key token  without manully?
+
+How to share storage account to client in secure way other than SAS token?
+
+Do you know about service identity or managed identity?
+
+how to add private subnet expose to the client with public subnet?
