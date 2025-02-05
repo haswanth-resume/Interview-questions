@@ -46,10 +46,22 @@ services in kubernetes
 list runnning docker
 
 diff replicaset wiith replica controller
+ReplicaSets and Replication Controllers in Kubernetes both serve the purpose of maintaining a specified number of pod replicas, but they differ in several aspects:
+Selectors: The Replication Controller uses equality-based selectors to manage pods, meaning it matches pods based on exact label values. 
+In contrast, ReplicaSets use set-based selectors, which allow for more expressive label matching using the matchExpressions field.
+This enables more flexible and powerful label selection criteria.
+Rolling Updates: The rolling-update command works with Replication Controllers but does not work with ReplicaSets. 
+For managing rolling updates, Deployments are recommended over ReplicaSets as they provide a declarative way to manage rolling updates and other advanced features.
+Deprecation: The Replication Controller is deprecated and replaced by ReplicaSets due to the latter's enhanced capabilities and flexibility. 
+ReplicaSets are considered the next generation of Replication Controllers.
+API Version: The API version for ReplicaSets is apps/v1, whereas Replication Controllers are part of the v1 API group.
+In summary, while both controllers aim to ensure a specified number of pod replicas, ReplicaSets offer more advanced and flexible features, making them the preferred choice in newer Kubernetes versions.
 
 copy module to copy file in Ansible
 
 Deployment config in Kubernetes?
+In Kubernetes, a Deployment config is a YAML or JSON file that defines the desired state of a set of identical pods. 
+This configuration includes details such as the number of replicas, the container image to use, and the labels to apply. 
 
 Ansible Vault
 
@@ -60,6 +72,7 @@ how to get dependency of Maven?
 Sonarqube
 
 Is inventory file is dynamic or static?
+It can be both
 
 CrashLoopBackOff error in docker?
 A “CrashLoopBackOff” error in Docker typically indicates that a container is repeatedly crashing and restarting. This can happen for several reasons:
