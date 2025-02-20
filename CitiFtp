@@ -29,7 +29,8 @@ Ans: Rebasing is the process of moving or combining a sequence of commits to a n
 git rebase <branch-name> 
 Reverting: Makes new commit that undoes the changes made by specific commit. 
 In place of removing or changing history like resetting does, reverting adds new commit that effectively reverses the changes introduced by the commit you specify.
-Key Differences.
+This command is safer than git reset because it does not alter existing history, instead creating a new commit that reverses the changes of the specified commit.
+command git revert commit id
 
 4. statefulsets in kubernetes?
 Ans: A StatefulSet in Kubernetes is a workload API object used to manage stateful applications. 
