@@ -32,7 +32,7 @@ Automated Security Testing:
 Incorporate automated security tests into your CI/CD pipeline using tools like GitHub Actions or GitLab CI/CD. These can run security checks as part of your build and deployment process.
 
 3. Which terraform version is in market available?
-Ans: 1.9.3
+Ans: 1.10.5
 
 4. How you can increase subnet range in V-nets?
 Ans: Go to the Subnets section within your virtual network.
