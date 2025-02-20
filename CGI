@@ -1,9 +1,50 @@
 what is webapps service plan used for?
+Ans: Azure App Service offers several types of App Service plans, each designed to cater to different needs and budgets.
+The main types include Free, Shared, Basic, Standard, Premium, and Isolated plans.
+Free and Shared Plans: These are ideal for testing applications without incurring costs. 
+They are not recommended for production workloads due to limited capabilities and performance.
+Basic Plans: These plans are suitable for small-scale applications and provide a balance between cost and performance. 
+Basic plans offer 1, 2, or 4 cores with 1.75 GB, 3.50 GB, or 7 GB of RAM respectively.
+Standard Plans: These are designed for production workloads and offer more robust features and performance compared to Basic plans.
+They run on dedicated Virtual Machine instances, ensuring better performance and reliability.
+Premium Plans: These plans are optimized for high-performance applications and provide advanced features such as enhanced security, support for larger instances, and more powerful compute capabilities.
+Isolated Plans: These plans provide a private, dedicated Azure environment for applications, ensuring complete isolation and security.
+They are suitable for applications that require compliance with regulatory requirements or have strict security needs.
 
-how to change api key token  without manully?
+How to change api key token  without manully?
+Ans: To change API key tokens in Azure Storage accounts without manually updating them, you can use managed identities for Azure resources.
+Managed identities allow you to authenticate to backend APIs with a system-assigned or user-assigned managed identity, which can be individually regenerated on demand.
+
+To use managed identities to change an API token in a storage account, you first need to ensure that your Azure resources are configured correctly with managed identities. 
+This involves assigning the appropriate roles to the managed identity on the storage account.
+For example, you can assign the Storage Blob Data Contributor role to the managed identity to allow it to manage blobs in the storage account.
+Here are the general steps to follow:
+Enable Managed Identity: Ensure your application or service has a managed identity enabled. This can be done through the Azure portal, PowerShell, or ARM templates.
+Assign Role: Assign the necessary role to the managed identity on the storage account. This can be done using the Azure portal, PowerShell, or Azure CLI.
+Use Managed Identity to Access Storage: Use the managed identity to authenticate and access the storage account. 
+This can be done using the DefaultAzureCredential class in .NET, which fetches tokens using the managed identity and attaches them to the service client.
+Change API Token: Once authenticated, you can use the service client to interact with the storage account and change the API token as needed. 
+For example, you can update the metadata of a blob to include a new API token.
 
 How to share storage account to client in secure way other than SAS token?
+Ans: One secure alternative to sharing a storage account to a client without using a SAS token is to create a new Azure function as a proxy on your storage account for uploading or downloading files.
+This approach uses managed identities, which means you do not have to provide a SAS token directly. User authorization on the Azure Function ensures that permissions are removed when the user is no longer authorized.
+Another method involves creating a SAS token with an Azure Function and sending it to the user through your application. This allows you to create a SAS token with a short lifetime, enhancing security. If the communication between clients and the server uses TLS, it guarantees secure transmission of the token.
+
 
 Do you know about service identity or managed identity?
+Ans: Managed identities for Azure resources are a feature that provides Azure services with an automatically managed identity in Microsoft Entra ID, allowing services to authenticate to other services that support Microsoft Entra authentication without managing credentials.
+There are two types of managed identities: system-assigned and user-assigned. 
+A system-assigned managed identity is created as part of an Azure resource and shares the same life cycle as the resource.
+It can only be associated with a single Azure resource and is deleted when the resource is deleted.
+A user-assigned managed identity, on the other hand, is created as a standalone Azure resource and can be shared across multiple Azure resources. 
+It has an independent life cycle and must be explicitly deleted.
+Service principals are related to managed identities but are not the same. 
+Internally, managed identities are service principals of a special type, which can only be used with Azure resources. 
+When a managed identity is deleted, the corresponding service principal is also automatically removed.
+In summary, managed identities simplify the management of identities for Azure resources by automating the creation and renewal of service principals, reducing the need for developers to manage credentials and secrets directly in their code.
 
 how to add private subnet expose to the client with public subnet?
+Ans: To expose a service running in a private subnet to the client through a public subnet, you can use a bastion host or a load balancer.
+A bastion host in the public subnet can forward traffic to the service in the private subnet, provided the security groups are configured to allow this traffic.
+Alternatively, you can use an Elastic Load Balancer (ELB) in the public subnet to route traffic to the service in the private subnet. The ELB's security group should allow traffic from the outside world, and the private subnet's security group should allow traffic from the ELB.
