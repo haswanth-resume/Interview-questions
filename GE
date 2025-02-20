@@ -21,7 +21,15 @@ how to setup Kubernetes
 Explore AWS services
 
 
-diff monolithic and microservices
+diff monolithic and microservices?
+
+Aspect	            Monolithic Applications	          Microservices Applications
+Architecture	      Single, unified unit             	Multiple, loosely coupled services
+Deployment	        Entire application at once	      Independent service deployment
+Scalability       	Replicate entire application	    Scale services independently
+Development	        Single codebase	                  Decentralized development
+Testing	            Integrated testing	              Independent and integrated testing
+Performance	        Fewer network calls	              Network call overhead
 
 SDLC process
 
@@ -39,7 +47,13 @@ Issues you have faced while using Git?
 What is GitOps?
 What branching strategies you have followed?
 What is command to login the docker container?
+docker exec -it mynginx /bin/bash
+
 What is Docker build command?
+The Docker build command is used to create a Docker image based on a Dockerfile. 
+This command must be run in the same directory as the Dockerfile. 
+When an image is built, the commands specified in the Dockerfile are executed, which can include installing the operating system and required packages in the Docker container.
+
 What are the Types of Jenkins agents?
 What type of pipeline you created in Jenkins?
 How you setup CI that triggers the Jenkins pipeline?
