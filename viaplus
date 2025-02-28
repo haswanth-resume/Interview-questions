@@ -1,6 +1,30 @@
 what is deployment groups?
 
 how to check logs in linux vm?
+cd /var/log
+
 
 how to check ports of linux server?
+1. Using netstat (if installed)
+netstat -tuln
+-t: Show TCP connections.
+-u: Show UDP connections.
+-l: List listening ports.
+-n: Show numerical addresses instead of resolving hostnames.
 
+2. Using ss (preferred method for modern Linux systems)
+ss -tuln
+Similar to netstat, it shows all listening TCP and UDP ports.
+
+3. Using lsof (list open files)
+lsof -i -P -n
+This displays all network connections and their corresponding processes.
+
+4. Using nmap (requires installation)
+Install nmap if not already installed:
+sudo apt install nmap
+Then, scan open ports:
+nmap <IP_address>
+5. Using iptables (or firewall rules)
+You can check open ports based on the configured firewall:
+sudo iptables -L -n -v
