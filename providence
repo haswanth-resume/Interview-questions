@@ -4,7 +4,19 @@ Terraform resource is deleted from portal, how can we resolve that?
 
 how to troubleshoot apps service if an application is down?
 
-different between private endpoints and?
+different between private endpoints and public endpoints?
+Ans: 
+Public Endpoint
+- Accessibility: Public endpoints are openly accessible over the internet. Anyone with the correct URL or IP address and appropriate credentials (if required) can access them.
+- Use Cases: Typically used for services, APIs, or websites meant for public consumption, such as e-commerce sites, social media platforms, or public APIs.
+- Security: Extra measures like authentication, encryption, and rate limiting are usually implemented since these endpoints are exposed to a wider audience.
+- Network: They exist in publicly accessible zones, like the internet.
+
+Private Endpoint
+- Accessibility: Private endpoints are restricted to specific networks, such as a company's intranet or a Virtual Private Network (VPN). They are not directly accessible from the internet.
+- Use Cases: Commonly used for internal applications, databases, or services that require controlled access, ensuring sensitive data and functionality remain secure.
+- Security: Since they are not exposed to the internet, they inherently offer an additional layer of protection. Access is strictly controlled through network configurations.
+- Network: They exist within a private network, often leveraging tools like firewalls or private cloud solutions.
 
 how many private ips required for storage accounts having blobs, files, queues?
 
